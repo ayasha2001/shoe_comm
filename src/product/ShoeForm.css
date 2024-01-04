@@ -1,0 +1,22 @@
+#form {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: 2px solid gray;
+  padding: 4px;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.labelInput {
+  display: grid;
+  margin: 4px;
+}
+
+.size-input{
+    width: 30px;
+    height: 20px;
+}

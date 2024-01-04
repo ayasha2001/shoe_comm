@@ -1,0 +1,12 @@
+.p-div-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+button{
+    margin-left: 3px;
+}
