@@ -7,12 +7,12 @@ const CartList = (props) => {
   const contxt = useContext(CartContext);
   return (
     <Modal onClose={props.onClose}>
-      {contxt.cartItems.map((item) => {
+      {props.cartList.map((item) => {
         return <CartItem item={item} key={item.id}/>;
       })}
-      <label>Total billing amount is {" " + contxt.tPrice}</label>
+      <label>Total billing amount is {" " + props.tPrice}</label>
       <div>
-        <button onClick={contxt.placeOrder}>Place order</button>
+        <button onClick={props.placeOrder}>Place order</button>
         <button onClick={props.onClose}>close</button>
       </div>
     </Modal>

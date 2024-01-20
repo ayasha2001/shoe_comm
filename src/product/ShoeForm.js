@@ -2,14 +2,14 @@ import React, { useContext, useState } from "react";
 import "./ShoeForm.css";
 import CartContext from "../context/CartContext";
 
-const ShoeForm = () => {
+const ShoeForm = ({ sendFormEntry }) => {
   const [shoeName, setShoeName] = useState("");
   const [shoeDesc, setShoeDesc] = useState("");
   const [shoePrice, setShoePrice] = useState("");
   const [sSizeQty, setSSizeQty] = useState(0);
   const [lSizeQty, setLSizeQty] = useState(0);
   const [mSizeQty, setMSizeQty] = useState(0);
-  const cntxt = useContext(CartContext);
+  // const cntxt = useContext(CartContext);
 
   const handleNameChange = (e) => {
     setShoeName(e.target.value);
@@ -37,7 +37,7 @@ const ShoeForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    cntxt.onItemAdd({
+    const data = {
       shoeName: shoeName,
       shoeDesc: shoeDesc,
       shoePrice: shoePrice,
@@ -45,7 +45,8 @@ const ShoeForm = () => {
       mSizeQty: mSizeQty,
       lSizeQty: lSizeQty,
       id: Math.random(),
-    });
+    };
+    sendFormEntry(data);
     setShoeName("");
     setShoeDesc("");
     setShoePrice("");

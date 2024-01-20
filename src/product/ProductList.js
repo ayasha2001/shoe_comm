@@ -3,16 +3,14 @@ import CartContext from "../context/CartContext";
 import ProductItem from "./ProductItem";
 import "./ProductList.css"
 
-const ProductList = () => {
-  const cntxt = useContext(CartContext);
+const ProductList = ({productList}) => {
   return (
     <div className="li-container">
-      {cntxt.items.map((item) => {
-        console.log(cntxt.items)
+      {productList.map((item) => {
+        console.log(item)
         return <ProductItem item={item} key={item.id} />;
       })}
     </div>
   );
 };
-
 export default ProductList;
